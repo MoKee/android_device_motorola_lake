@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_lake.mk
+    $(LOCAL_DIR)/mokee_lake.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_lake-eng \
-    lineage_lake-user \
-    lineage_lake-userdebug
+    mokee_lake-eng \
+    mokee_lake-user \
+    mokee_lake-userdebug

@@ -41,7 +41,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
     MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
-TARGET_KERNEL_CONFIG := lineageos_lake_defconfig
+TARGET_KERNEL_CONFIG := mokee_lake_defconfig
 
 # NFC
 BOARD_NFC_CHIPSET := pn553
