@@ -22,7 +22,7 @@ BOARD_USES_KEYMASTER_4 := true
 DEVICE_PATH := device/motorola/lake
 
 # Assertions
-TARGET_OTA_ASSERT_DEVICE := lake
+TARGET_OTA_ASSERT_DEVICE := lake,lake_n
 
 # Display
 TARGET_SCREEN_DENSITY := 420
@@ -40,9 +40,6 @@ SOONG_CONFIG_MOTOROLA_SDM660_INIT_DEVICE_LIB := //$(DEVICE_PATH):libinit_lake
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
-    MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
 TARGET_KERNEL_CONFIG := mokee_lake_defconfig
 
 # NFC
@@ -57,11 +54,11 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 939524096
 # Power
 TARGET_HAS_NO_WLAN_STATS := true
 
+# Recovery
+TARGET_RECOVERY_UI_BLANK_UNBLANK_ON_INIT := true
+
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
-
-# SELinux
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # inherit from the proprietary version
 -include vendor/motorola/lake/BoardConfigVendor.mk
